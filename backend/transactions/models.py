@@ -14,6 +14,8 @@ class IssueBook(models.Model):
 
   book = models.ForeignKey(Book, on_delete=models.CASCADE)
 
+  issue_number = models.CharField(max_length=20, unique=True, null=True, blank=True, )
+
   issued_by = models.ForeignKey(User, on_delete=models.CASCADE, related_name='issued_books')
 
   issue_date = models.DateField(auto_now_add=True)
@@ -28,6 +30,8 @@ class IssueBook(models.Model):
 
   late_days = models.PositiveIntegerField(default=0)
 
+  fine_per_day = models.DecimalField(max_digits=6, decimal_places=2, default=10.00)
+
   fine_amount = models.DecimalField(max_digits = 10,decimal_places=2,default=0)
 
   created_at = models.DateTimeField(auto_now_add=True)
@@ -36,3 +40,4 @@ class IssueBook(models.Model):
 
   def __str__(self):
     return f"{self.user.username} - {self.book.title}"
+  
