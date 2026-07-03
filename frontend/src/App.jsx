@@ -19,12 +19,16 @@ import FineSummary from "./pages/FineSummary";
 import FineHistory from "./pages/FineHistory";
 import DeactivationRequests from "./pages/DeactivationRequests";
 import RequestDeactivation from "./pages/RequestDeactivation";
+import ChatBot from "./components/ChatBot";
 
 import Settings from "./pages/Settings";
 
 function App() {
   return (
     <BrowserRouter>
+
+      <ChatBot />
+
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
