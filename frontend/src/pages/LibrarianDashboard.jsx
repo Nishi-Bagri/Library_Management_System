@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import Navbar from "../components/Navbar";
+import ChatBot from "../components/ChatBot";
 import {
   FaUsers,
   FaBook,
@@ -150,14 +151,6 @@ function LibrarianDashboard() {
 
         <div
           className="stat-card clickable"
-          onClick={() => navigate("/issue-book")}
-        >
-          <MdMenuBook className="card-icon" />
-          <h3>Issue Book</h3>
-        </div>
-
-        <div
-          className="stat-card clickable"
           onClick={() => navigate("/password-reset-requests")}
         >
           <FaKey className="card-icon" />
@@ -230,6 +223,7 @@ function LibrarianDashboard() {
           ))
         )}
       </div>
+      <ChatBot />
     </div>
   );
 }

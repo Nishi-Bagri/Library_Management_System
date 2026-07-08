@@ -59,3 +59,73 @@ def book_details(title):
 
     except Book.DoesNotExist:
         return {}
+    
+
+def library_information(topic):
+    """
+    Return library-related information based on the requested topic.
+    """
+
+    topic = topic.lower().strip()
+
+    information = {
+        "fine": (
+            "A fine of ₹10 per day is charged for each day a book is returned "
+            "after its due date."
+        ),
+
+        "borrow": (
+            "Users can borrow books from the library through the librarian. "
+            "Books are issued based on availability."
+        ),
+
+        "renew": (
+            "Books can be renewed before the due date, subject to library "
+            "rules and availability."
+        ),
+
+        "timings": (
+            "The library is open from Monday to Friday, "
+            "9:00 AM to 6:00 PM."
+        ),
+
+        "contact": (
+            "For assistance, please contact the librarian or the "
+            "library administrator."
+        ),
+
+        "password": (
+            "If you forget your password, use the 'Forgot Password' option "
+            "on the login page or contact the librarian/administrator."
+        ),
+    }
+
+    for key, value in information.items():
+        if key in topic:
+            return {
+                "topic": key,
+                "information": value,
+            }
+
+    return {
+        "topic": "general",
+        "information": (
+            "I can help with library policies such as fines, borrowing, "
+            "renewal, library timings, contact information, and password reset."
+        ),
+    }
+
+def recommend_books(category):
+    """
+    Recommend books based on category.
+    """
+
+    books = Book.objects.filter(
+        category__icontains=category,
+        available_quantity__gt=0
+    )[:5]
+
+    if not books.exists():
+        return []
+
+    return serialize_books(books)

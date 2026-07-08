@@ -19,16 +19,11 @@ import FineSummary from "./pages/FineSummary";
 import FineHistory from "./pages/FineHistory";
 import DeactivationRequests from "./pages/DeactivationRequests";
 import RequestDeactivation from "./pages/RequestDeactivation";
-import ChatBot from "./components/ChatBot";
-
 import Settings from "./pages/Settings";
 
 function App() {
   return (
     <BrowserRouter>
-
-      <ChatBot />
-
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/admin" element={<AdminDashboard />} />
@@ -37,7 +32,10 @@ function App() {
         <Route path="/books" element={<Books />} />
         <Route path="/issue-book" element={<IssueBook />} />
         <Route path="/issued-books" element={<IssuedBooks />} />
-        <Route path="/create-password/:token" element={<CreatePassword />} />
+        <Route
+          path="/create-password/:token"
+          element={<CreatePassword />}
+        />
         <Route path="/reports" element={<Reports />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/register" element={<Register />} />
@@ -45,22 +43,26 @@ function App() {
           path="/password-reset-requests"
           element={<PasswordResetRequests />}
         />
-        <Route path="/reset-password/:token" element={<ResetPassword />} />
+        <Route
+          path="/reset-password/:token"
+          element={<ResetPassword />}
+        />
         <Route path="/users" element={<Users />} />
-        <Route path="/fine-summary" element={<FineSummary />} />
-
-        <Route path="/fine-history/:userId" element={<FineHistory />} />
-
         <Route path="/librarians" element={<Librarians />} />
-
-        <Route path="/deactivation-requests" element={<DeactivationRequests />}/>
-        
-        <Route path="/request-deactivation" element={<RequestDeactivation />}/>
-        
-
-        <Route path="/settings" element={<Settings />}/>
-
-
+        <Route path="/fine-summary" element={<FineSummary />} />
+        <Route
+          path="/fine-history/:userId"
+          element={<FineHistory />}
+        />
+        <Route
+          path="/deactivation-requests"
+          element={<DeactivationRequests />}
+        />
+        <Route
+          path="/request-deactivation"
+          element={<RequestDeactivation />}
+        />
+        <Route path="/settings" element={<Settings />} />
       </Routes>
     </BrowserRouter>
   );

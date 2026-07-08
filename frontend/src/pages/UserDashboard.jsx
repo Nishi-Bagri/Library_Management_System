@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import Navbar from "../components/Navbar";
-
+import ChatBot from "../components/ChatBot";
 import {
   FaBook,
   FaCheckCircle,
@@ -154,6 +154,7 @@ function UserDashboard() {
           </tbody>
         </table>
       </div>
+      <ChatBot />
     </div>
   );
 }

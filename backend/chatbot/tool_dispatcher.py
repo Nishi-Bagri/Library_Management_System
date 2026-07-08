@@ -1,4 +1,12 @@
-from .tools import search_books, available_books, search_by_author, search_by_category, book_details
+from .tools import (
+    search_books,
+    available_books,
+    search_by_author,
+    search_by_category,
+    book_details,
+    library_information,
+    recommend_books,
+)
 
 TOOL_FUNCTIONS = {
     "search_books": search_books,
@@ -6,4 +14,6 @@ TOOL_FUNCTIONS = {
     "search_by_author": search_by_author,
     "search_by_category": search_by_category,
     "book_details": book_details,
+    "library_information": library_information,
+     "recommend_books": recommend_books,
 }

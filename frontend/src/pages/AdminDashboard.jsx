@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import api from "../services/api";
 import Navbar from "../components/Navbar";
+import ChatBot from "../components/ChatBot";
 import {
   FaUsers,
   FaBook,
@@ -232,6 +233,7 @@ function AdminDashboard() {
           ))
         )}
       </div>
+      <ChatBot />
     </div>
   );
 }

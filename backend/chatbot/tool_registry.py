@@ -84,4 +84,51 @@ TOOLS = [
             }
         }
     },
+
+    {
+        "type": "function",
+        "function": {
+            "name": "library_information",
+            "description": (
+                "Answer questions about library policies, borrowing rules, "
+                "renewal policy, fine policy, library timings, contact "
+                "information and password reset."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "topic": {
+                        "type": "string",
+                        "description": (
+                            "The library topic requested by the user. "
+                            "Examples: fine, borrow, renew, timings, "
+                            "contact, password."
+                    )
+                }
+            },
+            "required": ["topic"]
+            }
+        }
+    }, 
+    {
+        "type": "function",
+        "function": {
+            "name": "recommend_books",
+            "description": (
+                "Recommend available books based on a category."
+            ),
+            "parameters": {
+                "type": "object",
+                "properties": {
+                    "category": {
+                        "type": "string",
+                        "description": (
+                            "Book category for recommendations."
+                        )
+                    }
+                },
+                "required": ["category"]
+            }
+        }
+    },
 ]
